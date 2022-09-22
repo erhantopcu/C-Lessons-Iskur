@@ -199,42 +199,190 @@ namespace newProject
             #endregion
 
             #region Örnek5
-            //bir manav bölümünde satılan elma, armut ve muz - elma=3TL armut  = 5TL muz=7TL 
-            //kilogram fiyatlarına göre müşterinin üründen ne kadar alınmak istediği ödeyeceği ücreti belirlenmesi
+            ////bir manav bölümünde satılan elma, armut ve muz - elma=3TL armut  = 5TL muz=7TL 
+            ////kilogram fiyatlarına göre müşterinin üründen ne kadar alınmak istediği ödeyeceği ücreti belirlenmesi
 
-            int elma=3;
-            int armut=5;
-            int muz=7;
+            //int elma=3;
+            //int armut=5;
+            //int muz=7;
 
-            Console.WriteLine("Ne alırsınız?");
-            string secim;
-            secim = Convert.ToString(Console.ReadLine());
-            Console.WriteLine("Kac Kilo alırsınız");
-            int kilo;
-            kilo = Convert.ToInt32(Console.ReadLine());
-            
+            //Console.WriteLine("Ne alırsınız?");
+            //string secim;
+            //secim = Convert.ToString(Console.ReadLine());
+            //Console.WriteLine("Kac Kilo alırsınız");
+            //int kilo;
+            //kilo = Convert.ToInt32(Console.ReadLine());
 
-            if (secim == "elma")
-            {
-                Console.WriteLine("Vereceğiniz ücret " + elma * kilo + " TL");
-            }
-            else if (secim == "armut")
-            {
-                Console.WriteLine("Vereceğiniz ücret " + armut * kilo + " TL");
 
-            }
-            else if (secim == "muz")
+            //if (secim == "elma")
+            //{
+            //    Console.WriteLine("Vereceğiniz ücret " + elma * kilo + " TL");
+            //}
+            //else if (secim == "armut")
+            //{
+            //    Console.WriteLine("Vereceğiniz ücret " + armut * kilo + " TL");
+
+            //}
+            //else if (secim == "muz")
+            //{
+            //    Console.WriteLine("Vereceğiniz ücret " + muz * kilo + " TL");
+            //}
+            //else
+            //{
+            //}
+
+            //Console.ReadLine();
+
+            ////Ödev 0 ile 50 arasındaysa yüzde 10 indirim uygulayın. eğer 50 ile 100 arasındaysa yüzde15 indirim
+            //// 100 üzerinde ise yüzde20 indirim uygulayın.
+            #endregion
+
+            #region Örnek-Notlar
+            ////1. sınav 2. sınav proje not ortalaması hesaplama
+            ////1. sınav yüzde 30 - 2.sınav yüzde 50 - proje yüzde 20
+            //// ortalama 0-50 kaldı / 50-70 geçti / 70-100 çok iyi
+
+            //int ilkSinav;
+            //int ikinciSinav;
+            //int proje;
+            //int puan;
+            //ab:
+
+
+            //Console.WriteLine("İlk Sınav Notu");
+            //ilkSinav = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine("İkinci Sınav Notu");
+            //ikinciSinav = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine("Proje Notu");
+            //proje = Convert.ToInt16(Console.ReadLine());
+
+            //puan = ilkSinav * 30 / 100 + ikinciSinav * 50/100 + proje*20/100;
+            //Console.WriteLine("puanı :" + puan);
+
+            //if(ilkSinav>100 || ikinciSinav>100 || proje>100 || ilkSinav<100 || ikinciSinav<100 || proje < 100)
+            //        {
+            //    Console.WriteLine("YANLIS NOT");
+            //    goto ab;
+            //}
+            //    else if (puan >= 0 && puan <= 50)
+            //    {
+            //        Console.WriteLine("Kaldı");
+            //    }
+            //    else if (puan > 50 && puan <= 70)
+            //    {
+            //        Console.WriteLine("geçti");
+            //    }
+            //    else if (puan < 70 && puan >= 100)
+            //    {
+            //        Console.WriteLine("çok iyi");
+            //    }
+
+            //Console.ReadLine();
+
+            ////string mevsim;
+            ////string kis, ilkbahar, sonbahar, yaz;
+
+
+            ////Console.WriteLine("Lütfen mevsim giriniz");
+            ////mevsim = Convert.ToString(Console.ReadLine());
+
+
+            ////if (mevsim == "Kış")
+            ////{
+            ////    Console.WriteLine("ocak, şubat , aralık");
+            ////}
+            ////else if (mevsim == "Yaz")
+            ////{
+            ////    Console.WriteLine("haziran, temmuz, ağustos");
+            ////}
+
+            ////else if (mevsim == " İlkbahar")
+            ////{
+            ////    Console.WriteLine( "mart , nisan , mayıs");
+            ////}
+            ////else if (mevsim == " Sonbahar")
+            ////{
+            ////    Console.WriteLine( "eylül, ekim , kasım");
+            ////}
+            ////Console.ReadLine();
+            #endregion
+
+            #region switch
+
+            //string deger = Convert.ToString(Console.ReadLine());
+            //switch (deger)
+            //{
+            //    case "salih":
+            //        Console.WriteLine("Hg");
+            //        break;
+            //        case "cihat":
+            //        Console.WriteLine("Hg");
+            //        break;
+            //        case "mehmet":
+            //        Console.WriteLine("Hg");
+            //        break;
+            //        case "ahmet":
+            //        Console.WriteLine("Hg");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Sen kimsin");
+            //        break;
+                    
+            //}
+            //Console.ReadLine();
+
+            //string mevsim = Convert.ToString(Console.ReadLine());
+            //switch (mevsim)
+            //{
+            //    case "Ilkbahar":
+            //        Console.WriteLine("Mart, Nisan , Mayıs");
+            //        break;
+            //    case "Yaz":
+            //        Console.WriteLine("Haziran, Temmuz, Ağustos");
+            //        break;
+            //    case "Sonbahar":
+            //        Console.WriteLine("Eylül, Ekim, Kasım");
+            //        break;
+            //    case "Kıs":
+            //        Console.WriteLine("Aralık, Ocak, Şubat");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Yanlış girdiniz");
+            //        break;
+
+            //}
+            //Console.ReadLine();
+
+            string gunler = Convert.ToString(Console.ReadLine());
+            switch (gunler)
             {
-                Console.WriteLine("Vereceğiniz ücret " + muz * kilo + " TL");
-            }
-            else
-            {
+                case "1":
+                    Console.WriteLine("Pazartesi");
+                    break;
+                case "2":
+                    Console.WriteLine("Salı");
+                    break;
+                case "3":
+                    Console.WriteLine("Çarşamba");
+                    break;
+                case "4":
+                    Console.WriteLine("Perşembe");
+                    break;
+                case "5":
+                    Console.WriteLine("Cuma");
+                    break;
+                case "6":
+                    Console.WriteLine("Cumartesi");
+                    break;
+                case "7":
+                    Console.WriteLine("Pazar");
+                    break;
+                default :
+                    Console.WriteLine("Yanlış girdiniz");
+                    break ;
             }
 
             Console.ReadLine();
-            
-            //Ödev 0 ile 50 arasındaysa yüzde 10 indirim uygulayın. eğer 50 ile 100 arasındaysa yüzde15 indirim
-            // 100 üzerinde ise yüzde20 indirim uygulayın.
             #endregion
         }
 
