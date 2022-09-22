@@ -420,7 +420,18 @@ namespace newProject
             // ödev 
             //111112222333445   
             //555554444333221 çıktı bu olucak
-        }
 
+            int say = Convert.ToInt16(Console.ReadLine());
+
+            for (int i = 1; i <= say; i++)
+            {
+
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write(i);
+                }
+            }
+            Console.ReadLine();
+        }
     }
 }
