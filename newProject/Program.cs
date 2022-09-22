@@ -386,38 +386,40 @@ namespace newProject
             #endregion
 
             #region switch case 4 işlem
-            Console.WriteLine("Değer 1");
-            int sayi1 = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine("Değer 1");
+            //int sayi1 = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("Değer 2");
-            int sayi2 = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine("Değer 2");
+            //int sayi2 = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("Hangi işlemi yapıcağınızı seçin");
-            string islem = Convert.ToString(Console.ReadLine());
+            //Console.WriteLine("Hangi işlemi yapıcağınızı seçin");
+            //string islem = Convert.ToString(Console.ReadLine());
 
-            switch (islem)
-            {
-                case "Toplam":
-                    Console.WriteLine("Toplam Değer", sayi1 + sayi2);
-                    break;
-                case "Çıkarma":
-                    Console.WriteLine("Çıkarma Sonuç", sayi1 - sayi2);
-                    break;
-                case "Bölme":
-                    Console.WriteLine("Bölme Sonuç", sayi1 / sayi2);
-                    break;
-                case "Çarpma":
-                    Console.WriteLine("Çarpma Sonuç", sayi1 * sayi2);
-                    break;
+            //switch (islem)
+            //{
+            //    case "Toplam":
+            //        Console.WriteLine("Toplam Değer", sayi1 + sayi2);
+            //        break;
+            //    case "Çıkarma":
+            //        Console.WriteLine("Çıkarma Sonuç", sayi1 - sayi2);
+            //        break;
+            //    case "Bölme":
+            //        Console.WriteLine("Bölme Sonuç", sayi1 / sayi2);
+            //        break;
+            //    case "Çarpma":
+            //        Console.WriteLine("Çarpma Sonuç", sayi1 * sayi2);
+            //        break;
 
-                default:
-                    Console.WriteLine("Deger Yok");
-                    break;
+            //    default:
+            //        Console.WriteLine("Deger Yok");
+            //        break;
 
-            }
-            Console.ReadLine();
+            //}
+            //Console.ReadLine();
             #endregion
-
+            // ödev 
+            //111112222333445   
+            //555554444333221 çıktı bu olucak
         }
 
     }
