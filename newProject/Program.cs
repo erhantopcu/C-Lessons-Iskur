@@ -327,7 +327,7 @@ namespace newProject
             //    default:
             //        Console.WriteLine("Sen kimsin");
             //        break;
-                    
+
             //}
             //Console.ReadLine();
 
@@ -353,39 +353,72 @@ namespace newProject
             //}
             //Console.ReadLine();
 
-            string gunler = Convert.ToString(Console.ReadLine());
-            switch (gunler)
-            {
-                case "1":
-                    Console.WriteLine("Pazartesi");
-                    break;
-                case "2":
-                    Console.WriteLine("Salı");
-                    break;
-                case "3":
-                    Console.WriteLine("Çarşamba");
-                    break;
-                case "4":
-                    Console.WriteLine("Perşembe");
-                    break;
-                case "5":
-                    Console.WriteLine("Cuma");
-                    break;
-                case "6":
-                    Console.WriteLine("Cumartesi");
-                    break;
-                case "7":
-                    Console.WriteLine("Pazar");
-                    break;
-                default :
-                    Console.WriteLine("Yanlış girdiniz");
-                    break ;
-            }
+            //string gunler = Convert.ToString(Console.ReadLine());
+            //switch (gunler)
+            //{
+            //    case "1":
+            //        Console.WriteLine("Pazartesi");
+            //        break;
+            //    case "2":
+            //        Console.WriteLine("Salı");
+            //        break;
+            //    case "3":
+            //        Console.WriteLine("Çarşamba");
+            //        break;
+            //    case "4":
+            //        Console.WriteLine("Perşembe");
+            //        break;
+            //    case "5":
+            //        Console.WriteLine("Cuma");
+            //        break;
+            //    case "6":
+            //        Console.WriteLine("Cumartesi");
+            //        break;
+            //    case "7":
+            //        Console.WriteLine("Pazar");
+            //        break;
+            //    default :
+            //        Console.WriteLine("Yanlış girdiniz");
+            //        break ;
+            //}
 
+            //Console.ReadLine();
+            #endregion
+
+            #region switch case 4 işlem
+            Console.WriteLine("Değer 1");
+            int sayi1 = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Değer 2");
+            int sayi2 = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Hangi işlemi yapıcağınızı seçin");
+            string islem = Convert.ToString(Console.ReadLine());
+
+            switch (islem)
+            {
+                case "Toplam":
+                    Console.WriteLine("Toplam Değer", sayi1 + sayi2);
+                    break;
+                case "Çıkarma":
+                    Console.WriteLine("Çıkarma Sonuç", sayi1 - sayi2);
+                    break;
+                case "Bölme":
+                    Console.WriteLine("Bölme Sonuç", sayi1 / sayi2);
+                    break;
+                case "Çarpma":
+                    Console.WriteLine("Çarpma Sonuç", sayi1 * sayi2);
+                    break;
+
+                default:
+                    Console.WriteLine("Deger Yok");
+                    break;
+
+            }
             Console.ReadLine();
             #endregion
+
         }
 
     }
-
 }
