@@ -606,6 +606,50 @@ namespace newProject
             #region DİZİLER
             //Aynı türden değişkenlerin bir arada bulundugu saklanma alanı dizidir.
 
+            //*/******* Tek boyutlu diziler
+
+            //int[] sayilar = {5,6,7,8,9 };
+
+
+            //sayilar[0] = 5;
+            //sayilar[1] = 6;
+            //sayilar[2] = 7;
+            //sayilar[3] = 8;
+            //sayilar[4] = 9;
+
+
+            //Console.WriteLine(sayilar.Length);
+
+            //char[] sayilar = { 'a', 'b', 'c' };
+            //Console.WriteLine(sayilar[0]);
+            //Console.ReadLine();
+
+            //Bir dizi tanımla int olarak. klavyeden sor kaç elemanlı olsun. sonra tekrar sorsun.
+
+            Console.WriteLine("Kaç elemanlı olsun");
+
+            //int[] sayi;
+
+            int deger = Convert.ToInt32(Console.ReadLine()); // dizi boyutu belirliyoruz
+
+            int[] sayi = new int[deger]; //dizinin boyutunu belirliyoruz
+
+            for (int i = 0; i < deger; i++)
+            {
+                Console.WriteLine(i + ".ci elemanı gir."); //dizi elemanlarını belirliyoruz.
+                int eleman = Convert.ToInt16(Console.ReadLine());
+                sayi[i] = eleman;
+            }
+            Console.WriteLine("dizi girme işlemi tamamlandı. \n dizi elemanları");
+
+            for (int j = 0; j < deger; j++)
+
+            {
+                Console.WriteLine(sayi[j]);
+            }
+            Console.ReadLine();
+
+
             #endregion
             #endregion
         }
