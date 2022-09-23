@@ -417,21 +417,198 @@ namespace newProject
             //}
             //Console.ReadLine();
             #endregion
+
+            #region Ödev2
             // ödev 
             //111112222333445   
             //555554444333221 çıktı bu olucak
 
-            int say = Convert.ToInt16(Console.ReadLine());
+            //int say = Convert.ToInt16(Console.ReadLine());
 
-            for (int i = 1; i <= say; i++)
-            {
+            //for (int i = 1; i <= say; i++)
+            //{
 
-                for (int j = 0; j < i; j++)
-                {
-                    Console.Write(i);
-                }
-            }
-            Console.ReadLine();
+            //    for (int j = 0; j < i; j++)
+            //    {
+            //        Console.Write(i);
+            //    }
+            //}
+            //Console.ReadLine();
+            #endregion
+
+            #region 23.09.2022
+
+            #region Örnekler
+
+            //int sayi = 50, toplam = 0;
+
+            //for (int i = 0; i < sayi; i++)
+            //{
+            //    toplam += i;
+            //}
+            //Console.WriteLine(toplam);
+
+            //Console.ReadLine();
+
+            //**************** Tek sayılar toplamı
+            //int sayi = 50, toplam = 0;
+
+            //for (int i = 1; i < sayi; i+=2)
+            //{
+            //    toplam +=i ;
+            //}
+            //Console.WriteLine(toplam);
+
+            //Console.ReadLine();
+
+            //**************** 77 nin 9a tam bölünenleri
+
+            //for (int i = 1; i < 77; i++)
+            //{
+            //    if (i % 9 == 0)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+            //}
+            //Console.ReadLine();
+
+            //****************Fibonacci
+            //int a = 1;
+            //int b = 1;
+            //int c;
+
+            //Console.Write("1" + " 1");
+            //for(int i = 1; i <= 10; i++)
+            //{
+            //    c = a + b;
+            //    a = b;
+            //    b = c;
+
+            //    Console.Write(" "+ c);
+            //}
+
+            //Console.ReadLine(); 
+
+            //******************* Asal Sayıların Çıktısı
+
+            //int durum = 0; //bool durum= true;
+            //Console.WriteLine("Sayı Girin");
+            //int sayi = Convert.ToInt16(Console.ReadLine());
+
+            //for (int i = 2; i < sayi; i++)
+            //{
+            //    if (sayi % i == 0)
+            //    {
+            //        durum++; // bool durum = false;
+            //    }
+            //}
+            //if (durum != 0) // if(durum) ==> asaldır.
+            //    Console.WriteLine("Girdiğiniz sayı asal değildir.");
+            //else
+            //    Console.WriteLine("Girdiğiniz sayı asaldır.");
+            //Console.ReadLine();
+            //}
+
+            //**************** 555554444333221
+
+            //for (int i = 5; i > 0; i--)
+            //{
+            //    for (int j = 0; j < i; j++)
+            //    {
+            //        Console.Write(i);
+            //    }
+
+            //}
+
+            //**************** 1111122223334455
+
+            //for ( int i=1; i>6; i++)
+            //{
+            //    for (int j = 6; j > 1; j--)
+            //    {
+            //        Console.Write(i);
+            //    }
+            //}
+
+            //**************** 1-100 arasındaki asal sayıların toplamları- alttaki cevap eksik
+            //int toplam = 0;
+            //bool durum = true;
+            //int sayi = 100;
+            //for (int i = 2; i < sayi; i++)
+            //{
+            //    for (int j = 2; j < i; j++)
+            //    {
+            //        if (i % j == 0)
+            //        {
+            //            durum = false;
+
+            //        }
+            //    }
+
+            //    if (durum)
+            //    {
+            //        toplam = toplam + i;
+            //    }
+
+            //}
+            //Console.WriteLine(toplam);
+
+            //Console.ReadLine();
+
+            #endregion
+
+            #region while döngüsü
+
+            //int topla=0;
+            //int j=0;
+            //while (j<10)
+            //{
+            //    topla = topla + j;
+            //    j++;
+            //}  
+            //    Console.WriteLine(topla);
+
+            //Console.ReadLine();
+
+
+            //********* 1'den 10a kadar tek sayı
+
+            //int topla = 0;
+            //int j = 1;
+            //while (j < 10)
+            //{
+
+            //    topla = topla + j;
+            //    Console.WriteLine(j);
+            //    j = j +2;
+
+            //}
+            //Console.WriteLine(topla);
+
+            //Console.ReadLine();
+
+            //int sayi;
+            //int fac = 1;
+            //Console.WriteLine("Sayı girin");
+            //sayi = Convert.ToInt16(Console.ReadLine());
+
+            //while (sayi > 1)
+            //{
+
+            //    fac = fac * sayi;
+            //    sayi--;
+            //}
+            //Console.WriteLine(fac);
+            //Console.ReadLine();
+
+            #endregion
+
+            #region DİZİLER
+            //Aynı türden değişkenlerin bir arada bulundugu saklanma alanı dizidir.
+
+            #endregion
+            #endregion
         }
     }
 }
+
