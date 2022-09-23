@@ -626,26 +626,34 @@ namespace newProject
 
             //Bir dizi tanımla int olarak. klavyeden sor kaç elemanlı olsun. sonra tekrar sorsun.
 
-            Console.WriteLine("Kaç elemanlı olsun");
+            ////Console.WriteLine("Kaç elemanlı olsun");
 
             //int[] sayi;
 
-            int deger = Convert.ToInt32(Console.ReadLine()); // dizi boyutu belirliyoruz
+            ////int deger = Convert.ToInt32(Console.ReadLine()); // dizi boyutu belirliyoruz
 
-            int[] sayi = new int[deger]; //dizinin boyutunu belirliyoruz
+            ////int[] sayi = new int[deger]; //dizinin boyutunu belirliyoruz
 
-            for (int i = 0; i < deger; i++)
+            ////for (int i = 0; i < deger; i++)
+            ////{
+            ////    Console.WriteLine(i + ".ci elemanı gir."); //dizi elemanlarını belirliyoruz.
+            ////    int eleman = Convert.ToInt16(Console.ReadLine());
+            ////    sayi[i] = eleman;
+            ////}
+            ////Console.WriteLine("dizi girme işlemi tamamlandı. \n dizi elemanları");
+
+            ////for (int j = 0; j < deger; j++)
+
+            ////{
+            ////    Console.WriteLine(sayi[j]);
+            ////}
+            ///
+
+            string[] isimler = { "ahmet", "mehmet", "kazım", "fatih" };
+
+            for (int i = 0; i < isimler.Length; i++)
             {
-                Console.WriteLine(i + ".ci elemanı gir."); //dizi elemanlarını belirliyoruz.
-                int eleman = Convert.ToInt16(Console.ReadLine());
-                sayi[i] = eleman;
-            }
-            Console.WriteLine("dizi girme işlemi tamamlandı. \n dizi elemanları");
-
-            for (int j = 0; j < deger; j++)
-
-            {
-                Console.WriteLine(sayi[j]);
+                Console.WriteLine(isimler[i]);
             }
             Console.ReadLine();
 
