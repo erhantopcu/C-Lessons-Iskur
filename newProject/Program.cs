@@ -907,39 +907,39 @@ namespace newProject
             //}
             //Console.ReadLine();
 
-            int satır;      //kullanıcı tarafından girilen satır ve sutun
-            int sutun;
+            //int satır;      //kullanıcı tarafından girilen satır ve sutun
+            //int sutun;
             
-            Console.WriteLine("sutun");
-            sutun = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine("sutun");
+            //sutun = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("satır");             //kullanıcı tarafından girilen degerler
-            satır = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine("satır");             //kullanıcı tarafından girilen degerler
+            //satır = Convert.ToInt16(Console.ReadLine());
           
-            int[,] dizi = new int[satır, sutun]; //dizi tanımla
+            //int[,] dizi = new int[satır, sutun]; //dizi tanımla
 
 
-            for (int i = 0; i < satır; i++) //satır sutun degeri bellekte tutuyoruz
-            {
-                for (int j = 0; j < sutun; j++)
-                {
-                    Console.WriteLine("satır {0}x{1} sutun", i+1, j+1);
-                    dizi[i, j] = Convert.ToInt16(Console.ReadLine());
+            //for (int i = 0; i < satır; i++) //satır sutun degeri bellekte tutuyoruz
+            //{
+            //    for (int j = 0; j < sutun; j++)
+            //    {
+            //        Console.WriteLine("satır {0}x{1} sutun", i+1, j+1);
+            //        dizi[i, j] = Convert.ToInt16(Console.ReadLine());
                     
-                }
+            //    }
                 
-            }
-            Console.WriteLine();
+            //}
+            //Console.WriteLine();
 
-            for (int i = 0; i < satır; i++) // bellekte bulunan degerleri ekrana yazdırıyoruz
-            {
-                for (int j = 0; j < sutun; j++)
-                {
-                    Console.Write(dizi[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-            Console.ReadLine();
+            //for (int i = 0; i < satır; i++) // bellekte bulunan degerleri ekrana yazdırıyoruz
+            //{
+            //    for (int j = 0; j < sutun; j++)
+            //    {
+            //        Console.Write(dizi[i, j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.ReadLine();
 
 
             #endregion
