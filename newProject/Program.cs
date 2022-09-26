@@ -649,17 +649,303 @@ namespace newProject
             ////}
             ///
 
-            string[] isimler = { "ahmet", "mehmet", "kazım", "fatih" };
+            //string[] isimler = { "ahmet", "mehmet", "kazım", "fatih" };
 
-            for (int i = 0; i < isimler.Length; i++)
+            //for (int i = 0; i < isimler.Length; i++)
+            //{
+            //    Console.WriteLine(isimler[i]);
+            //}
+            //Console.ReadLine();
+            #endregion
+
+            #endregion
+
+            #region 26.09.2022
+
+            #region Soru1
+            //   *
+            //  ***
+            // *****
+            //*******
+            // *****
+            //  ***
+            //   *
+            //for(int i = 0; i <4; i++)
+            //{
+            //    Console.WriteLine(" ");
+            //    for (int j = 3-i; j >0 ; j--)
+            //    {
+            //        Console.Write(" ");
+            //    }
+            //    for (int k = 0; k < 2*i+1; k++)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //}
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Console.WriteLine(" ");
+            //    for (int j = 0; j <=i; j++)
+            //    {
+            //        Console.Write(" ");
+            //    }
+            //    for (int k = 5-(i*2); k >0 ; k--)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //}
+            //Console.ReadLine();
+
+            #endregion
+
+            #region TekBoyutluDizi
+
+            //string[] dizi = { "mehmet", "ahmet", "yusuf" };
+
+            //Console.WriteLine("***************************");
+            //for (int i = 0; i < dizi.Length; i++)
+            //{
+            //    Console.WriteLine(dizi[i]);
+            //}
+
+            //Console.WriteLine("***************************");
+            //foreach (string d in dizi)
+            //{
+            //    Console.WriteLine(d);
+            //}
+
+            //Console.WriteLine("***************************");
+            //Console.WriteLine(dizi[0]);
+            //Console.WriteLine(dizi[1]);
+            //Console.WriteLine(dizi[2]);
+
+            //Console.WriteLine("***************************");
+
+            //int j = 0;
+            //while (j < dizi.Length)
+
+            //{
+            //    Console.WriteLine(dizi[j]);
+            //    j++;
+            //}
+
+            //Console.ReadLine();
+
+
+
+            //bool durum = true;
+            //while(durum)
+            //{
+            //    string ad;
+            //    Console.WriteLine("Lütfen adınızı giriniz: ");
+            //    ad = Convert.ToString(Console.ReadLine());
+            //    string soyad;
+            //    Console.WriteLine("Lütfen soyadınızı giriniz: ");
+            //    soyad = Convert.ToString(Console.ReadLine());
+            //    Console.WriteLine(ad + " " + soyad + " Hoşgeldiniz");
+
+            //}
+            //Console.ReadLine();
+            #endregion
+
+
+            #region Soru 2
+            //18,5> zayıf 18,5-24,9 normal 24,9 ile 29,9 kilolu erkek-kadın için
+
+            //bool durum = true;
+            //while (durum)
+            //{
+            //    double index;
+            //    double kilo;
+            //    double boy;
+            //    string cinsiyet;
+
+            //    Console.WriteLine("Cinsiyetinizi girin");
+            //    cinsiyet = (Console.ReadLine());
+
+            //    Console.WriteLine("Lütfen kilo giriniz :");
+            //    kilo = Convert.ToDouble(Console.ReadLine());
+
+            //    Console.WriteLine("Lütfen boy giriniz :");
+            //    boy = Convert.ToDouble(Console.ReadLine());
+
+            //Console.WriteLine(index = ((kilo) / (boy * boy)) * 10000);
+
+            //    if (index < 18.5)
+            //    {
+            //        Console.WriteLine("Boy Kilo index'iniz: ");
+            //        Console.WriteLine(index = ((kilo) / (boy * boy)) * 10000);
+            //        Console.WriteLine("Zayıfsınız");
+            //    }
+            //    else if (18.5 < index && index<24.9)
+            //    {
+            //        Console.WriteLine("Boy Kilo index'iniz: ");
+            //        Console.WriteLine(index = ((kilo) / (boy * boy)) * 10000);
+            //        Console.WriteLine("Kilonuz Normal");
+            //    }
+            //    else if (24.9 < index)
+            //    {
+            //        Console.WriteLine("Boy Kilo index'iniz: ");
+            //        Console.WriteLine(index = ((kilo) / (boy * boy)) * 10000);
+            //        Console.WriteLine("Aşırı Kilolu");
+            //    }
+
+            //    switch (cinsiyet)
+            //    {
+            //        case "erkek":
+
+            //            index = index = ((kilo) / (boy * boy)) * 10000;
+            //            if (index < 18.5)
+            //            {
+            //                Console.WriteLine("Zayıf " + index);
+            //            }
+            //            else if (index > 18.5 && index < 24.9)
+            //            {
+            //                Console.WriteLine("Normal " + index);
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine("Aşırı Kilolu " + index);
+            //            }
+            //            break;
+
+            //        case "kadın":
+            //            index = index = ((0.9 * kilo) / (boy * boy)) * 10000;
+            //            if (index < 18.5)
+            //            {
+            //                Console.WriteLine("Zayıf " + index);
+            //            }
+            //            else if (index > 18.5 && index < 24.9)
+            //            {
+            //                Console.WriteLine("Normal " + index);
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine("Aşırı Kilolu " + index);
+            //            }
+            //            break;
+            //    }
+            //    break;
+            //}
+            //Console.ReadLine();
+            #endregion
+
+            #region fonksiyonlar
+            //double sayi;
+            //Console.WriteLine("Lütfen sayi");
+            //sayi = Convert.ToDouble(Console.ReadLine());
+            //Console.WriteLine("yuvarla" + Math.Floor(sayi));
+            //Console.ReadLine();
+
+            #endregion
+
+            #region rastgele
+
+            //Random rastgele = new Random();
+            //int b;
+            //b=rastgele.Next(0,10);
+            //Console.WriteLine(b);
+
+            //Console.ReadLine();
+
+            //Random random = new Random();
+            //Console.WriteLine("atama");
+
+            //string[] sehir = { "Istanbul", "Sakarya", "Izmıt", "Bursa", "Ankara" };
+            //int a;
+            //a = random.Next(0, sehir.Length);
+            //Console.WriteLine(a);
+            //Console.WriteLine(sehir[a]);
+            //Console.ReadLine();
+
+
+
+
+            #endregion
+
+            #region ÇokBoyutluDiziler
+
+            //string[,] dizi = { { "mehmet", "salih" }, { "ali", "veli" } };
+            //string[,] dizi2 = new string[2, 2];
+            //dizi2[0, 0] = "mehmet";
+            //dizi2[0, 1] = "salih";
+            //dizi2[1, 0] = "cihat";
+            //dizi2[1, 1] = "bedir";
+
+            ////int[,] dizi2 = new int[2, 2];
+            ////dizi2[0, 0] = 2;
+            ////dizi2[0, 1] = 3;
+            ////dizi2[1, 0] = 4;
+            ////dizi2[1, 1] = 5;
+
+            //int[,] dizi2= { { 14, 17, 18, 12, 19 }, { 13, 17, 11, 14, 19 }, { 15, 18, 10, 14, 20 } }; //yukarının farklı bir yöntemi
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    for (int j = 0; j < 5; j++)
+            //    {
+            //        Console.Write( dizi2[i, j]);
+            //        Console.Write(" ");
+            //    }
+            //    Console.WriteLine(" ");
+            //}
+            //Console.ReadLine();
+
+
+            //int[,] dizi2 = { { 14, 17, 18, 12, 19 }, { 13, 17, 11, 14, 19 }, { 15, 18, 10, 14, 20 } };
+            //int[,] dizi3 = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
+            //int[,] dizi4 = new int[3, 5];
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    for (int j = 0; j < 5; j++)
+            //    {
+            //        Console.Write(dizi2[i, j] + dizi3[i,j]);
+            //        Console.Write(" ");
+            //    }
+            //    Console.WriteLine(" ");
+            //}
+            //Console.ReadLine();
+
+            int satır;      //kullanıcı tarafından girilen satır ve sutun
+            int sutun;
+            
+            Console.WriteLine("sutun");
+            sutun = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("satır");             //kullanıcı tarafından girilen degerler
+            satır = Convert.ToInt16(Console.ReadLine());
+          
+            int[,] dizi = new int[satır, sutun]; //dizi tanımla
+
+
+            for (int i = 0; i < satır; i++) //satır sutun degeri bellekte tutuyoruz
             {
-                Console.WriteLine(isimler[i]);
+                for (int j = 0; j < sutun; j++)
+                {
+                    Console.WriteLine("satır {0}x{1} sutun", i+1, j+1);
+                    dizi[i, j] = Convert.ToInt16(Console.ReadLine());
+                    
+                }
+                
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < satır; i++) // bellekte bulunan degerleri ekrana yazdırıyoruz
+            {
+                for (int j = 0; j < sutun; j++)
+                {
+                    Console.Write(dizi[i, j] + " ");
+                }
+                Console.WriteLine();
             }
             Console.ReadLine();
 
 
             #endregion
             #endregion
+
+
         }
     }
 }
