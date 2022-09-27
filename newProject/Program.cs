@@ -909,13 +909,13 @@ namespace newProject
 
             //int satır;      //kullanıcı tarafından girilen satır ve sutun
             //int sutun;
-            
+
             //Console.WriteLine("sutun");
             //sutun = Convert.ToInt16(Console.ReadLine());
 
             //Console.WriteLine("satır");             //kullanıcı tarafından girilen degerler
             //satır = Convert.ToInt16(Console.ReadLine());
-          
+
             //int[,] dizi = new int[satır, sutun]; //dizi tanımla
 
 
@@ -925,9 +925,9 @@ namespace newProject
             //    {
             //        Console.WriteLine("satır {0}x{1} sutun", i+1, j+1);
             //        dizi[i, j] = Convert.ToInt16(Console.ReadLine());
-                    
+
             //    }
-                
+
             //}
             //Console.WriteLine();
 
@@ -945,8 +945,6 @@ namespace newProject
             #endregion
             #endregion
 
-
         }
     }
 }
-
