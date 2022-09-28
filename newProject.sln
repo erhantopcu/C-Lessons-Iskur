@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C-Lessons", "newProject\C-L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metotlar", "Metotlar\Metotlar.csproj", "{5325AC95-C428-44D5-8258-794BFE7AFB91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siniflar", "Siniflar\Siniflar.csproj", "{08FD67CC-90D6-4EB6-9687-02C98CFA2BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KutuphaneProjesi", "KutuphaneProjesi\KutuphaneProjesi.csproj", "{6327CCF3-DA42-422E-ABDC-C0F2CEDEB168}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{5325AC95-C428-44D5-8258-794BFE7AFB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5325AC95-C428-44D5-8258-794BFE7AFB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5325AC95-C428-44D5-8258-794BFE7AFB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08FD67CC-90D6-4EB6-9687-02C98CFA2BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08FD67CC-90D6-4EB6-9687-02C98CFA2BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08FD67CC-90D6-4EB6-9687-02C98CFA2BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08FD67CC-90D6-4EB6-9687-02C98CFA2BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6327CCF3-DA42-422E-ABDC-C0F2CEDEB168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6327CCF3-DA42-422E-ABDC-C0F2CEDEB168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6327CCF3-DA42-422E-ABDC-C0F2CEDEB168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6327CCF3-DA42-422E-ABDC-C0F2CEDEB168}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
