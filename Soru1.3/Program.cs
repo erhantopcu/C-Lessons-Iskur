@@ -42,9 +42,16 @@ namespace Soru1._3
 
             for (int i = 0; i < satır; i++) // bellekte bulunan degerleri ekrana yazdırıyoruz
             {
-                for (int j = 0; j < sutun; j++)
+                try
                 {
-                    Console.Write(dizi[i, j] + " ");
+                    for (int j = 0; j < sutun; j++)
+                    {
+                        Console.Write(dizi[i, j] + " ");
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Hata");
                 }
                 Console.WriteLine();
             }
