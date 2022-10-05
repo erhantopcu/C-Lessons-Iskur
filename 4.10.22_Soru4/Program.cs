@@ -10,22 +10,23 @@ namespace _4._10._22_Soru4
     {// Kendisine parametre olarak gelen cümle içinde yine kendisine parametre olarak gelen kelimeyi arayıp ve eğer kelime var ise geriye ture , yok ise false değeri döndüre KelimeVarmi adında metodu yazın.
         static bool KelimeVarmi(string cumle, string kelime)
         {
-            bool sonuc;
-            sonuc = false;
-            string[] kelimeler = kelime.Split(' ');
-            foreach (string kelimem in kelimeler)
-            {
-                if (kelimem == kelime) sonuc = true;
-                break;
-            }
-            return sonuc;
+            string[] kelimeler = cumle.Split(' ');
+          
+            return Array.IndexOf(kelimeler, kelime) == -1;
         }
 
         static void Main(string[] args)
         {
-            bool sonuc = KelimeVarmi("osman bizi ışınla", "bizi");
-            if (sonuc) Console.WriteLine("Var");
-            else Console.WriteLine("YOK");
+            bool sonuc = KelimeVarmi("Erhan yazılımı çok seviyor", "nane");
+            if (sonuc)
+            {
+                Console.WriteLine("yok");
+            }
+            else
+            {
+                Console.WriteLine("var");
+            }
+            Console.ReadLine();
         }
     }
 }
