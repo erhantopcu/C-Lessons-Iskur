@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_10_22_windowsFormBaslangi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_10_22_WF_Ornek", "6_10_22_WF_Ornek\6_10_22_WF_Ornek.csproj", "{18E369DA-AF9F-4317-ABEE-7E8438C338FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_10_22_Soru", "12_10_22_Soru\12_10_22_Soru.csproj", "{5B058B6C-E317-4B04-9F42-584616483997}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -213,6 +215,10 @@ Global
 		{18E369DA-AF9F-4317-ABEE-7E8438C338FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18E369DA-AF9F-4317-ABEE-7E8438C338FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18E369DA-AF9F-4317-ABEE-7E8438C338FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B058B6C-E317-4B04-9F42-584616483997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B058B6C-E317-4B04-9F42-584616483997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B058B6C-E317-4B04-9F42-584616483997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B058B6C-E317-4B04-9F42-584616483997}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
