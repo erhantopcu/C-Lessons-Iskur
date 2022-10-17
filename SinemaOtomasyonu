@@ -375,3 +375,13 @@ select COUNT(KoltukId) from TBL_Koltuk where SalonId!=5 and KoltukHarf IN('A','O
 -- Soyadı Aile başlayan kaç oyuncu vardır kolon adı oyuncu sayısı olsun?
 select COUNT(FilmOyuncuId) as 'Oyuncu Sayısı' from TBL_FilmOyunculari where FilmOyuncuSoyadi like '[A]%'
 select CONVERT(VARCHAR(10),FilmTurId)+' '+turu as 'Film Türleri' from TBL_FilmTur ORDER BY [Film Türleri]
+
+-- Soyadı Aile başlayan kaç oyuncu vardır kolon adı oyuncu sayısı olsun?
+select COUNT(FilmOyuncuId) as 'Oyuncu Sayısı' from TBL_FilmOyunculari where FilmOyuncuSoyadi like '[A]%'
+
+-- oscar biletlerinden kaç tane satış yapılmıştır?
+select COUNT(Bilet_Id) from TBL_Bilet where BiletAdı='Oscar'
+
+-- Seanslardan 20.09.2022 ile 20.10.2022 tarihleri arasında kaç farklı seans yapılmıştır?
+select * from TBL_Seanslar where  SeansZamani between '09-20-2022' and '10-20-2022
+
