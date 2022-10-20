@@ -184,7 +184,7 @@ order by CategoryName asc
 go
 create view taze
 as
-select  p.ProductName, od.UnitPrice,(p.UnitPrice*1.18) as 'KDV' from Suppliers s
+select c.CategoryName, p.ProductName, od.UnitPrice,(p.UnitPrice*1.18) as 'KDV' from Suppliers s
 inner join Products p on s.SupplierID = p.SupplierID
 inner join Categories c on c.CategoryID=p.CategoryID
 inner join [Order Details] od on od.ProductID = p.ProductID
