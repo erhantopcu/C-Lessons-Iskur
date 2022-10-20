@@ -1,0 +1,196 @@
+-- SQL SORGU ÖDEVLERİ (Join) --
+--1-Hangi müşteri hangi üründen kaç dolarlık satış almıştır (Products,[Order Details],Orders,Customers)
+
+--
+SELECT c.ContactName, p.ProductName, SUM(od.Quantity * od.UnitPrice * (1-Discount)) FROM Products p INNER JOIN [Order Details] od ON p.ProductID = od.ProductID INNER JOIN Orders o ON o.OrderID = od.OrderID INNER JOIN Customers c ON c.CustomerID = o.CustomerID GROUP BY C.ContactName , p.ProductName
+
+
+--2-Hangi personel hangi kategoriden hangi ürünleri satmıştır.(Employees,Orders,Order Details],Products,Categories,)
+
+--
+SELECT LEFT (FirstName,1)+ '.' + e.LastName AS 'Personel Adı Soyadı' , p.ProductName , c.CategoryName FROM Employees e INNER JOIN Orders o ON o.EmployeeID = e.EmployeeID INNER JOIN [Order Details] od ON od.OrderID = o.OrderIDINNER JOIN Products p ON p.ProductID = od.ProductID INNER JOIN Categories c ON c.CategoryID = p.CategoryID GROUP BY c.CategoryName,p.ProductName,e.FirstName , E.LastName
+
+
+--3-Ürünlerin adlarını ve kategori adlarını bir raporda gösteriniz. (Products , Categories)
+
+--
+SELECT p.ProductName , c.CategoryName FROM Products p LEFT JOIN Categories c ON c.CategoryID = p.CategoryID GROUP BY p.ProductName , c.CategoryName
+
+--4Beverages kategorisine ait stoklarda bulunan ürünleri raporla (Categories,Products)
+
+--
+SELECT p.ProductName AS 'Ürün Adı', c.CategoryName AS 'Kategori Adı', p.UnitsInStock AS 'Stok Miktarı' FROM Categories c INNER JOIN Products p ON p.CategoryID = c.CategoryID WHERE c.CategoryName = 'Beverages' GROUP BY p.UnitsInStock , c.CategoryName , p.ProductName
+
+
+--5- Federal Shipping ile taşınmış ve Nelsonun almış olduğu siparişleri göster
+
+--
+SELECT * FROM Employees e INNER JOIN Orders o ON o.EmployeeID = e.EmployeeID INNER JOIN Shippers s ON s.ShipperID = o.ShipVia WHERE s.CompanyName = 'Federal Shipping' AND e.FirstName = 'Nancy' 
+
+
+--6- Company name'ler arasında içerisinde A harfi geçen müşterilerin vermiş olduğu Nelson , Andrew ve Janot tarafından satılmış spedy expresle taşınmamış siparişlere toplam ne kadarlık kargo ödemesi yapılmıştır.
+
+--
+SELECT SUM(o.Freight) AS 'Toplam' FROM Shippers s INNER JOIN Orders o ON s.ShipperID = o.ShipVia INNER JOIN Employees e ON e.EmployeeID = o.EmployeeID INNER JOIN Customers c ON c.CustomerID = o.CustomerID WHERE s.CompanyName != 'Speedy Express' AND c.CompanyName LIKE '%A%' AND (e.FirstName = 'Nancy' OR e.FirstName = 'Salih' OR e.FirstName = 'Janet') 
+
+
+--7- En çok ürün aldığımız 3 toptancıyı almış olduğumuz ürün miktarına göre raporlayın
+
+--
+select top 3  s.CompanyName as 'Toptancı',Sum(Quantity)  as 'Toplam' from [Order Details] od inner join Products p on p.ProductID=od.ProductID inner join Suppliers s on s.SupplierID=p.SupplierID group by s.CompanyName order by 'Toplam' desc
+
+
+--8- Her bir üründen toplam ne kadarlık satış yapılmıştır ve o ürünler hangi kategorilere aittir.
+
+--
+SELECT p.ProductName AS 'Ürün adı', SUM(od.Quantity * od.UnitPrice * (1-Discount)) AS 'Toplam Satış' FROM Categories c INNER JOIN Products p ON p.CategoryID = c.CategoryID INNER JOIN [Order Details] od ON od.ProductID = p.ProductID GROUP BY p.ProductName
+
+
+--Having yapısı
+-- Aggregate fonksiyonlar aracılığıyla ile alınan sonuclar bir where kriteri içerisinde kullanılmamaktadırş
+--Bunun yerine (where yerine) kullanıdıgımız anahtar kelime 'having' anahtar kelismesidir.
+
+--toplam sipariş miktarı 1200 üzerinde olan ürünlerin adlarını ve sipariş miktarlarını gösteriniz.
+select Sum(Quantity) from [Order Details] od inner join Products p on od.ProductID =p.ProductID group by ProductName having sum(quantity)>1200
+
+--having group by fonksiyonudur. bu sayede filtreleme yaparsınız.
+
+--hangi personel hangi ürünü toplam kaç dolarlık satmıştır.
+SELECT LEFT (FirstName,1)+ '.' + e.LastName AS 'Personel Adı Soyadı' , p.ProductName , SUM(od.Quantity * od.UnitPrice * (1-Discount)) as 'Toplam', c.CategoryName FROM Employees e 
+INNER JOIN Orders o ON o.EmployeeID = e.EmployeeID 
+INNER JOIN [Order Details] od ON od.OrderID = o.OrderID 
+INNER JOIN Products p ON p.ProductID = od.ProductID 
+INNER JOIN Categories c ON c.CategoryID = p.CategoryID 
+GROUP BY c.CategoryName,p.ProductName,e.FirstName , E.LastName
+Having SUM(od.Quantity * od.UnitPrice * (1-Discount)) >1000
+Order by Toplam asc
+
+SELECT p.ProductName AS 'Ürün adı', SUM(od.Quantity * od.UnitPrice * (1-Discount)) AS 'Toplam Satış' FROM Categories c 
+INNER JOIN Products p ON p.CategoryID = c.CategoryID 
+INNER JOIN [Order Details] od ON od.ProductID = p.ProductID 
+GROUP BY p.ProductName order by 'toplam Satış' desc
+
+--250 den fazla sipariş taşımış olan kargo firmaların adlarını telefon numaralarını ve miktarlarını raporlayınız.
+select s.CompanyName, s.Phone, Count(o.ShipVia) as 'Kargo miktarı'  from Shippers s
+inner join  orders o on o.ShipVia = s.ShipperID
+group by s.CompanyName, s.Phone
+having Count(o.ShipVia) >250
+
+--İnsert işlemleri
+--var olan veri kaynağına yeni bir veri ekleme işlemidir. eğer tablonuzdaki tüm kolonlara insert işlemi gerçekleştiriyorsnaız tek tek kolon adlarını yazmak zorunda degilsiniz.
+--ancak dikkat edilmesi gereken nokta kolon sayılarını iyi bilmemiz gereklidir.
+
+--insert into tablo(kolon1,kolon2,...) values(deger1,deger2,...)
+-- kendinizi personel tablosuna ekleyin
+
+insert into Employees (FirstName,LastName) values('Erhan','Topcu')
+select *from Employees
+
+select SCOPE_IDENTITY()
+
+--update yapısı
+--var olan bir veri kaynağındaki verilerin yeni değerlerle güncellenmesini sağlayan yapıdır.
+--eğer update işleminde where kriterini unutusanız bütün kayıtlarınız aynı degerle güncellenir.
+
+--6 nolu kargo firmasının telefon numarasını (2128884447) olarak güncelleyin.
+
+insert into Shippers (CompanyName,Phone) values ('MNG' , '212 888 44 47'), ('DHL' , '423 333 45 64'), ('Yurt' , '222 444 55 66')
+select *from Shippers
+
+update Shippers set Phone = '2128884447' where ShipperID= 6
+
+--Çalışanlar tablosundaki NANCY adlı çalışanın doğum tarihini 01..01.1967 şehir bilgisini Erzincan olarak değiştir.
+
+select *from Employees
+update Employees set BirthDate = '01.01.1967', City = 'erzincan' where FirstName = 'nancy'
+
+--stogu 10 dan kücük olan ürünlere yüzde 6 zam yapan kodu yazın.
+update Products set unitprice = (unitprice * 1.06) where UnitsInStock <10
+select *from Products
+
+begin tran unitprice
+update Products set unitprice = (unitprice * 1.06) where UnitsInStock <10
+rollback tran
+
+--DELETE YAPISI
+--var olan verilerimizi tamamıyla silinmesi için kullanılan yapıdır. eğer delete işleminde where koşulunu uutursanız bütün kayıtları silersiniz.
+
+--kargo tablosundaki kargo idsi 3ten büyük olan bütün kayıtları siliyorsunuz.
+
+
+select *from Shippers 
+begin tran
+delete from Shippers where ShipperID >3 
+rollback transaction
+
+--view nesnesi
+--bir sorgu içerisinde çok fazla işlem gerçekleştiriyorsanız ve üstelik buna defalarca ihtiyacınız varsa view nesnesini kullanıyorsunuz ve sanal tablo olusturuyorsunuz.
+--sorgumuzu tıbkı sanal bir tabloymuscasına ve her defasında artık o tablodan o sorguların cekilmesini ister.
+
+--amerikalı müşterilerden alınmış siparişleri listeleyen bir sorgu tasarlayınız ve bir view içerisinde saklaynaız.
+go
+create view Amerikalılar 
+as
+select c.CustomerID, c.CompanyName, o.OrderID from Orders o
+inner join Customers c on o.CustomerID = c. CustomerID
+where c.Country = 'USA'
+go
+
+--view ile sanal tablo olusturulur bizzat veri tutmaz - veri güvenliği için
+
+--speedy expressle taşınmış nancy nn aldıgı pazartesi günleri dumon ve alfki idli müsteriler tarafından verilmis olan siparişler bunla ilgili view
+
+go 
+create view Siparis
+as
+select s.CompanyName, c.CustomerID, e.EmployeeID, o.OrderID,o.OrderDate,e.FirstName from orders o
+inner join Customers c on o.CustomerID= c.CustomerID
+inner join Shippers s on s.ShipperID= o.ShipVia
+inner join Employees e on e.EmployeeID = o.EmployeeID
+where s.CompanyName = 'Speedy Express' and DATENAME(WEEKDAY,o.OrderDate) ='Monday' and e.FirstName = 'nancy' and c.CustomerID in ('ALFKI','DUMON')
+go
+select *from Siparis
+
+--hangi ürünü hangi müşterinin hangi personelden aldığını gösterin
+go 
+create view SiparisDetaylari
+as
+select c.CustomerID, p.ProductID, e. EmployeeID , od.OrderID from Orders o
+inner join Customers c on o.CustomerID = c.CustomerID
+inner join Employees e on o.EmployeeID = e.EmployeeID
+inner join [Order Details] od on od.OrderID = o.OrderID
+inner join Products p on p.ProductID = od.ProductID
+go
+select *from SiparisDetaylari
+
+
+--katagorilerim diye view
+go
+create view Kategorilerim
+as
+select CategoryName from Categories
+go
+
+begin tran
+insert into Kategorilerim (CategoryName) values('Habits')
+rollback tran
+
+select CategoryName from Kategorilerim
+order by CategoryName asc
+
+--beverages kategorisie ait amerikanyalı toptancılar tarafından alınmış stoklarından mevcut ürünlerin adlarını, ücretlerini, kdvli ücretlerini gösteren bir view
+--(bağlı oldugu kolonlar asla silinmemeli ve view görünmemelidir)
+
+go
+create view taze
+as
+select  p.ProductName, od.UnitPrice,(p.UnitPrice*1.18) as 'KDV' from Suppliers s
+inner join Products p on s.SupplierID = p.SupplierID
+inner join Categories c on c.CategoryID=p.CategoryID
+inner join [Order Details] od on od.ProductID = p.ProductID
+where s.Country = 'USA' and c.CategoryName = 'beverages' and p.UnitsInStock is not null
+go
+select *from taze
+
+
+
