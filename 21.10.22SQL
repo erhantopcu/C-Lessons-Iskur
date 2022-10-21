@@ -1,0 +1,245 @@
+--Stored procedure
+
+-- select insert update delete gibi komutları calıstırabilme komutlarına sahip bir mekanizmadır. prosedürler oldukça hızlı
+--bir o kadar da güvenlidir. hızlıdır cünkü serverin ön belleğinde çalışmaya hazır sekilde çağrılmayı beklerler. parametre mantığıyla çalışır.
+-- ve size dışardan gelen degerleri nasıl işlenmesini isterseniz o kadarını işler. çok sık kullanılan bir yapıdır.
+--özellikle depo ve web uygulamalarında cokca rastlanılmaktadır. dış dünya ile etkilesimin en yüksek oldugu web platformudur.
+--dışardan gelebilecek saldırılara karşı en güçlüsüdür.
+
+--karga ekleyen bir prosedür tasarlayınız.
+
+go
+create proc KargoEkleyici1
+(
+@ad nvarchar(20),
+@tel nvarchar(20)
+)
+as
+insert into Shippers(CompanyName,Phone)
+values (@ad, @tel)
+go
+KargoEkleyici1 'abc kargo','5458888'
+
+--dışarda girilen değer kadar ürünlere zam yapan prosedür
+
+select *from Products
+go
+create proc Zamyapici
+(
+@miktar money
+)
+as
+update Products set UnitPrice+= @miktar
+
+go
+Zamyapici 5
+select *from Products
+
+--dışardan girilen kategori adına ait ürünleri listeleyen bir prosedür tasarla
+select *from Categories
+go
+create proc kategoriyegore1
+(
+@kati nvarchar(15)
+)
+as
+select CategoryName,c.CategoryID, p.ProductName from Products p 
+inner join Categories c on p.CategoryID=c.CategoryID
+where c.CategoryName=@kati
+go
+kategoriyegore1 'Beverages'
+
+select *from Products
+
+--dışardıan girilen kargo firması tarafından taşınmış ve yine dışarıdan girilen kargo ödeemsi 
+--değer aralığındaki siparişleri listeleyen bir prosedür tasarlayınız.
+go
+create proc siparisgetirici1
+(
+@kargoAdi nvarchar(15),
+@minUcret money,
+@maxUcret money
+)
+as
+select OrderID, CompanyName, Freight from Orders o
+inner join Shippers s on o.ShipVia=s.ShipperID
+where s.CompanyName=@kargoAdi and Freight between @minUcret and @maxUcret
+go
+siparisgetirici1 'United Package',10,100
+select *from Shippers
+
+--dışardan girilen karakterleri içerinde barındıran müşteri adına sahip müşterilerce verilmiş siparişleri listele
+go
+create proc musteri
+(
+@müsteri nvarchar(30)
+)
+as
+select *from Customers c 
+inner join Orders o on c.CustomerID = o.CustomerID
+where c.CompanyName like @müsteri
+go
+musteri '%eh%'
+
+--stok miktarı dışarıdan girilen iki değer arasında olan ürün ücreti dışarıdan girilen iki değer arasında olan
+--toptancı firma adı dışarıdan girilen harfi barındıran ürünlerin adlarını fiyatlarını toptanci şirket adalrını ve
+--kdv eklenmiş hallerini gösteren prosedür.
+go
+create proc urun
+(
+@minStok smallint,
+@maxStok smallint,
+@minUcret int,
+@maxUcret int,
+@karakterAd nvarchar(50)
+)
+as
+select p.ProductName, p.UnitPrice,p.UnitPrice*1.18 as 'KDV', s.CompanyName from Products p
+
+inner join Suppliers s on s.SupplierID = p.SupplierID
+where p.UnitsInStock between @minStok and @maxStok
+and p.UnitPrice between @minUcret and @maxUcret
+and s.CompanyName like @karakterAd 
+go
+urun 10,40,40,110,'%ltd%'
+
+--dışardan girilen çalışan ıdsi tarafından alınmış siparişleri listeleyiniz ancak dışardan kaç adet çalışan ıd geldiği bilinmemektedir.
+go
+create proc CalısanGore
+(
+@abc nvarchar(max)
+)
+as
+declare @sorgu nvarchar(max)
+set @sorgu = ('select orderID,OrderDate,EmployeeID from Orders where EmployeeID in ( ' + @abc + ' ) order by EmployeeID')
+Execute(@sorgu)
+go
+
+CalısanGore '1,5,7'
+
+--dışarıdan girilen kategorinin adını ve tanımını ekleyen prosedür
+
+go
+create proc KategoriEkle
+(
+@adi nvarchar(20),
+@aciklama nvarchar(20)
+)
+as
+if(not exists ( select *from Categories where CategoryName= @adi))
+begin
+insert into Categories (CategoryName,Description)
+values(@adi,@aciklama)
+end
+else
+begin
+print 'Zaten böyle bir kayıt var'
+end
+go
+exec KategoriEkle 'AAAA','AAAAaaaAAAAA'
+select *from Categories
+
+--yukarı devam ... aynı katagori adı varsa uyarı erip ekletmeyen kaydı uazın.
+
+--ürün id ve stogu ile dısarda verilen stok degerini degistiren storedlerini yazın.
+go
+create proc Urune
+(
+@urunid int,
+@urunstok int
+)
+as
+update Products set UnitsInStock = UnitsInStock+ @urunstok
+where ProductID= @urunid
+go
+Urune 5,25
+
+
+select *from Products where ProductID =5
+
+--ürün adıyla ürünü silen stored prosedürü
+go
+create proc silme1
+(
+@urunAdi nvarchar(20)
+)
+as
+delete Products where ProductName = @urunAdi
+
+go
+silme1 'Abccc'
+
+select *from Products where ProductID =83
+insert into products(ProductName) Values ('Abccc')
+
+--Fonksiyonlar--
+-- bir takım işlemlerden bize bir dizi değer döndüren nesnelere fonksiyon diyoruz.
+--iki tiptir . scalar(tek satır tek sutun deger döndüren) - table valued (geri bi tablo döndüren)
+--dezavantajı insert update delete gibi işlemler gerçekleşemiyor
+
+--dışarda girilen iki değeri toplayan ve bize geri döndüren bi fonksiyon yazalım.
+go
+create function ToplamaYap
+(
+@sayi1 int,
+@sayi2 int
+)
+returns int
+as
+begin
+return @sayi1 + @sayi2
+end
+go
+
+select dbo.ToplamaYap (10,5) as 'toplam'
+
+--dışardan girilen 3 sayının ortalamasını geri döndüren fonksiyon tasarlayınız.
+go
+create function Ortalama
+(
+@sayi1 float,
+@sayi2 float,
+@sayi3 float
+)
+returns float
+as
+begin
+return (@sayi1 + @sayi2 + @sayi3 ) / 3
+end
+go
+
+select dbo.Ortalama(10,5,20) as 'Ortalama'
+--parametre olarak ad soyad bilgisi alan bir fonksiyon tasarlayınız. bu fonksiyonun adın ilk 3 harfini, soyadın son 3 harfini alsın
+--aralarına nokta koysun sonuna ise @hotmail.com koyarak ve tamamını küçük harf yaparak geri döndürsün
+go
+alter function mail
+(
+@ad nvarchar(50),
+@soyad nvarchar(50)
+)
+returns nvarchar(50)
+as
+begin
+return lower(left(@ad,3)+ '.' + Right(@soyad,3) +'@hotmail.com')
+end
+go
+select dbo.mail('erhan','topcu') as 'mail'
+
+--ürün tablosundaki ürüne kdv ekleyip gösteren fonksiyonu yazalım
+go
+create function KDV
+(
+@kdv money
+)
+returns money
+as
+begin
+return @kdv*1.18
+end
+go
+select productname,UnitPrice, dbo.KDV(UnitPrice) as 'KDV' from Products
+
+
+
+
+

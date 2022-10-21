@@ -67,6 +67,7 @@ namespace _3_10_22_Soru3
             //Klavyede girilen bir cümleyi yazdırılacak . kullanıcı bu cümle girdikten sonra enter tuşuna bastıktan sonra önce cümleyi 
             //yazdırcak daha sonra cümle tersten yazılacak. A yerine ? E yerine * I veya i yerine ise = , o ve ö yerine ise & yazılıcak.
 
+            try { 
             Console.WriteLine("Cumle girin");
             string cumle = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Griilen cümle : {0}", cumle);
@@ -105,7 +106,11 @@ namespace _3_10_22_Soru3
 
                 Console.WriteLine("Toplam {0} tane harf şifrelendi"+ "{1} tanesi şifrelenmedi", sayac, cumle.Length-sayac);
                 Console.Write(harf);
-               
+               }
+            catch (Exception)
+            {
+                Console.WriteLine("Yanlıs giriş");
+            }
             }
             
             Console.ReadLine();

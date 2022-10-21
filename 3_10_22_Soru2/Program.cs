@@ -18,6 +18,7 @@ namespace _3_10_22_Soru2
             int diziToplami = 0, ortalamadanBuyuk = 0, ortalamadanKucuk = 0;
             double diziOrtalamasi = 0;
 
+            try { 
             for (int i = 0; i < dizi.Length; i++)
             {
                 
@@ -29,7 +30,11 @@ namespace _3_10_22_Soru2
                 
             }
             Console.WriteLine("Toplam : " + diziToplami);
-
+                }
+            catch(Exception)
+            {
+                Console.WriteLine("Hata");
+            }
             diziOrtalamasi = diziToplami / 20;
 
             foreach (int var in dizi)
