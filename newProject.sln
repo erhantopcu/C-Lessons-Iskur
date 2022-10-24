@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotOrtalamasıMF", "NotOrta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "soru_21_10_22", "soru_21_10_22\soru_21_10_22.csproj", "{A4E11E3B-6D08-4D7E-AEBA-157DC66D10D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO_", "ADO_\ADO_.csproj", "{0A9983D3-B48F-4705-9D14-A46D57E10BB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,10 @@ Global
 		{A4E11E3B-6D08-4D7E-AEBA-157DC66D10D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4E11E3B-6D08-4D7E-AEBA-157DC66D10D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4E11E3B-6D08-4D7E-AEBA-157DC66D10D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9983D3-B48F-4705-9D14-A46D57E10BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9983D3-B48F-4705-9D14-A46D57E10BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9983D3-B48F-4705-9D14-A46D57E10BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9983D3-B48F-4705-9D14-A46D57E10BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
