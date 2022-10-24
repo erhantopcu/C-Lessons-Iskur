@@ -173,7 +173,7 @@ delete Products where ProductID=@ProductID
             InitializeComponent();
         }
         SqlConnection sqlConnection = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-        public void MISRA() 
+        public void Ekle() 
         {
             SqlDataAdapter SDA = new SqlDataAdapter("select * from Products", sqlConnection);
             DataTable dT = new DataTable();
@@ -186,7 +186,7 @@ delete Products where ProductID=@ProductID
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MISRA();
+            Ekle();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -224,7 +224,7 @@ delete Products where ProductID=@ProductID
             Ekle.Parameters.Add(stok);
             Ekle.ExecuteNonQuery();
             sqlConnection.Close();
-            MISRA();
+            ekle();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -255,7 +255,7 @@ delete Products where ProductID=@ProductID
             Ekle.Parameters.Add(stok);
             Ekle.ExecuteNonQuery();
             sqlConnection.Close();
-            MISRA();
+            ekle();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -271,7 +271,7 @@ delete Products where ProductID=@ProductID
             Sil.Parameters.Add(id);
             Sil.ExecuteNonQuery();
             sqlConnection.Close();
-            MISRA();
+            ekle();
         }
     }
 }
