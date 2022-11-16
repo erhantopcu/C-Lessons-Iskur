@@ -1,0 +1,45 @@
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    background-color: red;
+    width: 100%;
+}
+.menu-item{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 110px;
+    float: left;
+    color : white;
+}
+div ul li a{
+    list-style: none;
+text-decoration: none;
+color : white;
+}
+.aside{
+    display: flex;
+    flex-wrap: wrap;
+}
+.div1, .div2, .div3, .div4{
+   display: flex;
+   flex-direction: column;
+   border: 1px solid red;
+   bottom:0;
+   margin:  10px;
+}
+footer{
+    height: 50px;
+    width: 100%;
+    background: red;
+    position: fixed;
+    bottom: 0px;
+}
+body{
+    background-color: white;
+}
+@media screen and 
