@@ -1,17 +1,27 @@
 *{
     margin: 0;
+    box-sizing: border-box;
     padding: 0;
     font-family: sans-serif;
 }
 
-.hero{
+.head{
     position: relative;
     width: 100%;
     height: 100vh;
-    background: #eff4fd;
+    background: white;
     position: relative;
+       
 }
-
+.fixo{
+    position: fixed; /* verdiğin top ve left değerlerinde sabit tutan kod 'fixed' yani tarayıcıya göre göreceli*/
+    width: 100%; /* burayı istediğin şekilde değiştirebilirsin tamamen senin kullanacağın header tasarımına göre ayarladığın width değeri*/
+    height: 100px; /* burayı istediğin şekilde değiştirebilirsin tamamen senin kullanacağın header tasarımına göre ayarladığın height değeri*/
+    background: white; /* burayı istediğin şekilde değiştirebilirsin yada kullanmayabilirsin örnekte belli olması için siyah rengini verdim*/
+    z-index: 10; /* z-index divine üst yada alt katman ayarı yapmanı sağlar 1'in sonuna koyduğun 0 saysısna göre daha yukarda olmasını sağlar. */
+    top: 0; /* top o divin en yukarı yapışık olması için kendi tasarımına göre değiştirebilirsin */
+    left: 0;
+}
 nav{
     display: flex;
     width: 84%;
@@ -22,7 +32,8 @@ nav{
 }
 
 .logo{
-    width: 100px;
+    width: 50px;
+    
     cursor: pointer;
 }
 
@@ -44,13 +55,15 @@ nav ul li a:hover{
 
 .detel{
     margin-left: 8%;
-    margin-top: 15%;
+    margin-top: 18%;
+    min-width: 20%;
+    min-height: 40%;
 }
 
 .detel h1{
     font-size: 50px;
     color: #212121;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 span{
@@ -68,7 +81,7 @@ span{
     padding: 10px 18px;
     text-decoration: none;
     font-weight: bold;
-    color: #fff;
+    color: white;
     display: inline-block;
     margin: 30px 0;
     border-radius: 5px;
@@ -78,7 +91,7 @@ span{
     width: 45%;
     height: 80%;
     position: absolute;
-    bottom: 0;
+    bottom: 270px;
     right: 100px;
 }
 
@@ -99,44 +112,56 @@ span{
     left: 45%;
 }
 
-.linkedin{
+
+.social{
     margin-left: 8%;
     margin-top: 100px;
 }
 
-.linkedin a{
+.social a{
     font-size: 30px;
     color: #212121;
     margin-right: 20px;
 }
 
-.linkedin a:hover{
-    color: rgb(0, 89, 255);
-}
-.instagram{
-    margin-left: 12%;
+.social a:hover{
+    color: rgb(0, 132, 255);
 
 }
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 360px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
 
-.instagram a{
-    font-size: 30px;
-    color: #212121;
-    margin-right: 20px;
-}
-
-.instagram a:hover{
-    color: orangered;}
-
-  .twitter{
-        margin-left: 12%;
-    
-    }
-    
-    .twitter a{
-        font-size: 30px;
-        color: #212121;
-        margin-right: 20px;
-    }
-    
-    .twitter a:hover{
-        color: blue;}    
+ 
