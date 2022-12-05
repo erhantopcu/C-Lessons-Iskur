@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      #ball {
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <button
+      type="button"
+      class="btn btn-danger rounded-circle"
+      id="ball"
+      onclick="hareketEttir()"
+    >
+      hareketEttir
+    </button>
+    <script>
+      let hareket = 0;
+      let durum = false;
+      function hareketEttir() {
+        if (durum == false) {
+          hareket++;
+
+          if (hareket == 100) {
+            durum = true;
+          }
+        } else {
+          hareket--;
+          if (hareket == 0) {
+            durum = false;
+          }
+        }
+        document.getElementById("ball").style.top = hareket + "px";
+        document.getElementById("ball").style.left = hareket + "px";
+      }
+      setInterval(hareketEttir, 10);
+    </script>
+
+    <p id="denem">Merhaba</p>
+    <button type="button" class="btn btn-primary" onclick="ekranayaz()">
+      Push
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      onclick="document.getElementById('denem').innerHTML='Nasılsınız arkadaşlar'"
+    >
+      Nasılsınız
+    </button>
+    <button type="button" class="btn btn-primary" onclick="ekranayaz2()">
+      Nasılsın
+    </button>
+    <script>
+      function ekranayaz() {
+        alert("HELLO WORLD");
+      }
+
+      function ekranayaz2() {
+        document.getElementById("denem").innerHTML = "Nasılsınız";
+      }
+    </script>
+    <!-- Değişkenler-->
+    <p id="deneme">Değişkenler</p>
+    <button type="button" class="btn btn-danger" onclick="Erhan()">
+      Button
+    </button>
+    <button type="button" class="btn btn-danger" onclick="yaziYaz()">
+      Button2
+    </button>
+
+    <button type="button" class="btn btn-danger" onclick="yaziYaz2()">
+      Button3
+    </button>
+    <button type="button" class="btn btn-danger" onclick="forDongusu()">
+      Button4
+    </button>
+
+    <button type="button" class="btn btn-danger" onclick="islem()">
+      Button5
+    </button>
+    <button type="button" class="btn btn-danger" onclick="vize()">
+      Button6
+    </button>
+    <button type="button" class="btn btn-danger" onclick="final()">
+      Button7
+    </button>
+
+    <table id="tablo" class="table table-hover"></table>
+    <button type="button" class="btn btn-primary" onclick="tablodoldur()">
+      Tabloyu Getir
+    </button>
+    <button type="button" class="btn btn-primary" onclick="yazdır()">
+      Yazdır
+    </button>
+    <button type="button" class="btn btn-primary" onclick="diziyiekleme()">
+      Tablo Ekleme
+    </button>
+
+    <p id="ort1"></p>
+    <p id="yazi">Merhaba</p>
+    <button type="button" class="btn btn-primary" onclick="fontart()">
+      Yazdır
+    </button>
+
+    <script>
+      //font ayaralma
+      var font = 24;
+
+      //Diziler
+      var dersler = new Array("matematik", "Türkçe", "Fizik", "Felsefe");
+      function tablodoldur() {
+        var degerim = "";
+        for (var i = 0; i < dersler.length; i++) {
+          degerim += "<tr><td>" + dersler[i] + "</tr></td>";
+        }
+        document.getElementById("tablo").innerHTML = degerim;
+      }
+      function yazdır() {
+        window.print();
+      }
+      function diziyiekleme() {
+        var eleman = prompt("yeni bir ders ekle");
+        dersler.push(eleman);
+        tablodoldur();
+      }
+
+      //
+      function Erhan() {
+        var ad = "Erhan"; //string
+        var yas = 25; //int
+        var not = 92.5; //double
+        var karakter = "A";
+        var durum = true;
+        alert(ad + yas);
+      }
+      function yaziYaz() {
+        //if-else kullanımı
+        var deger = 2;
+
+        if (deger == 1) {
+          alert("deger 1 esittir");
+        } else {
+          alert("deger 2 esit degildir");
+        }
+      }
+      function yaziYaz2() {
+        var deger2 = 1;
+        switch (deger2) {
+          case 1:
+            alert("deger 1 esittir");
+            break;
+          case 2:
+            alert("deger 2 esit degildir");
+            break;
+          default:
+          // code block
+        }
+      }
+      function forDongusu() {
+        var deger3 = "";
+        for (var i = 0; i < 10; i++) {
+          deger3 += "Mehmet Nasilsin\n";
+        }
+        alert(deger3);
+      }
+      function islem() {
+        var renksec = prompt("Renk Secimi yapınız(K,S,M,Y)");
+        var yazi = prompt("Yazılacak yazıyı secin");
+        switch (renksec) {
+          case "K":
+            document.write("<span style = 'color : red'>" + yazi + "<span>");
+            break;
+        }
+      }
+      function vize() {
+        var ad = prompt("Adınızı girin");
+        var soyad = prompt("Soyisminizi girin");
+        var vize = prompt("Vize Notunuzu girin");
+        var final = prompt("Final Notunuzu girin");
+        var ort = (Number(vize) + Number(final)) / 2;
+
+        if (ort > 50) {
+          alert("Gectiniz");
+        } else {
+          alert("Kaldınız");
+        }
+        document.write(ad + " " + soyad + " " + ort + " " + "Gectiniz");
+      }
+      function final() {
+        var ad = prompt("Adınızı girin");
+        var soyad = prompt("Soyisminizi girin");
+        var ort1, harfnot;
+        var isTrue = true;
+
+        while (isTrue) {
+          var s1 = prompt("Vize Notunuzu girin");
+          if (s1 >= 0 && s1 <= 100) {
+            isTrue = false;
+          }
+        }
+        while (isTrue) {
+          var s2 = prompt("Final Notunuzu girin");
+          if (s2 >= 0 && s2 <= 100) {
+            isTrue = false;
+          }
+        }
+        ort1 = (Number(s1) + Number(s2)) / 2.0;
+        if (ort1 >= 85 && ort1 <= 100) harfnot = "AA";
+        else if (ort1 >= 70 && ort1 < 85) harfnot = "BB";
+        else if (ort1 >= 55 && ort1 < 70) harfnot = "CC";
+        else if (ort1 >= 45 && ort1 < 55) harfnot = "DD";
+        else if (ort1 >= 0 && ort1 < 45) harfnot = "FF";
+
+        document.querySelector("#ort").innerHTML =
+          ad + " " + soyad + " " + ort1 + " " + harfnot + "gectiniz";
+        alert(ort1);
+      }
+    </script>
+    <!--
+        javascript
+        tarayıcı üzerinde çalışan, web sayfalarına dinamiklik katmak ve kullanıcıyla etkileşimi artırmak için kullanılan betik dildir. 
+        program dili kodları makina diline çevirip kullanılırken , betik dili kodları interpreter tarafından yorumlanarak çalıştırılır.
+        özellikle html css yetersiz kaldığı hesaplama, form elemanları kontrol etmek için gerekli işlemlerde kullanılır.
+    -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
